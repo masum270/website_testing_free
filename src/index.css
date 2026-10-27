@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  src: url('/fonts/HindSiliguri-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Theme Design System Variables - ALL 6 PREMIUM DARK THEMES, NO LIGHT/WHITE MODE */
+:root, .theme-dark {
+  --bg: #0f172a;
+  --nav-bg: rgba(2, 6, 23, 0.95);
+  --card: #1e293b;
+  --card-border: #334155;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --primary-light: #1e293b;
+  --badge-bg: #1e293b;
+  --hero-gradient: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+  --modal-overlay: rgba(2, 6, 23, 0.85);
+}
+
+.theme-charcoal {
+  --bg: #1c1917;
+  --nav-bg: rgba(12, 10, 9, 0.95);
+  --card: #292524;
+  --card-border: #57534e;
+  --text-main: #f5f5f4;
+  --text-muted: #a8a29e;
+  --primary: #facc15;
+  --primary-hover: #eab308;
+  --primary-light: #44403c;
+  --badge-bg: #44403c;
+  --hero-gradient: linear-gradient(180deg, rgba(41, 37, 36, 0.8) 0%, rgba(28, 25, 23, 0.9) 100%);
+  --modal-overlay: rgba(12, 10, 9, 0.85);
+}
+
+.theme-nature {
+  --bg: #052e16;
+  --nav-bg: rgba(2, 44, 34, 0.95);
+  --card: #14532d;
+  --card-border: #16a34a;
+  --text-main: #dcfce7;
+  --text-muted: #86efac;
+  --primary: #22c55e;
+  --primary-hover: #16a34a;
+  --primary-light: #166534;
+  --badge-bg: #166534;
+  --hero-gradient: linear-gradient(180deg, rgba(20, 83, 45, 0.8) 0%, rgba(5, 46, 22, 0.9) 100%);
+  --modal-overlay: rgba(2, 44, 34, 0.85);
+}
+
+.theme-ocean {
+  --bg: #082f49;
+  --nav-bg: rgba(12, 74, 110, 0.95);
+  --card: #0c4a6e;
+  --card-border: #0284c7;
+  --text-main: #e0f2fe;
+  --text-muted: #7dd3fc;
+  --primary: #0ea5e9;
+  --primary-hover: #0284c7;
+  --primary-light: #075985;
+  --badge-bg: #075985;
+  --hero-gradient: linear-gradient(180deg, rgba(12, 74, 110, 0.8) 0%, rgba(8, 47, 73, 0.9) 100%);
+  --modal-overlay: rgba(8, 47, 73, 0.85);
+}
+
+.theme-sunset {
+  --bg: #1e1228;
+  --nav-bg: rgba(21, 10, 36, 0.95);
+  --card: #2d1b3d;
+  --card-border: #7c3aed;
+  --text-main: #fef3c7;
+  --text-muted: #fbbf24;
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --primary-light: #4c1d95;
+  --badge-bg: #4c1d95;
+  --hero-gradient: linear-gradient(180deg, rgba(45, 27, 61, 0.8) 0%, rgba(30, 18, 40, 0.9) 100%);
+  --modal-overlay: rgba(21, 10, 36, 0.85);
+}
+
+.theme-tfs {
+  --bg: #3b0764;
+  --nav-bg: rgba(88, 28, 135, 0.95);
+  --card: #581c87;
+  --card-border: #7e22ce;
+  --text-main: #f3e8ff;
+  --text-muted: #d8b4fe;
+  --primary: #a855f7;
+  --primary-hover: #9333ea;
+  --primary-light: #6b21a8;
+  --badge-bg: #6b21a8;
+  --hero-gradient: linear-gradient(180deg, rgba(88, 28, 135, 0.8) 0%, rgba(59, 7, 100, 0.9) 100%);
+  --modal-overlay: rgba(59, 7, 100, 0.85);
+}
+
+@layer base {
+  * {
+    font-family: 'Hind Siliguri', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Hind Siliguri', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+}
+
+/* Reusable Theme-aware utility classes */
+.tfs-bg {
+  background-color: var(--bg);
+}
+.tfs-card {
+  background-color: var(--card);
+  border-color: var(--card-border);
+  color: var(--text-main);
+}
+.tfs-text {
+  color: var(--text-main);
+}
+.tfs-muted {
+  color: var(--text-muted);
+}
+.tfs-primary-btn {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+.tfs-primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+.tfs-border {
+  border-color: var(--card-border);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
